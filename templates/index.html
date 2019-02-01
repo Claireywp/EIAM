@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <STYLE type="text/css">
+		#login{
+			width:400px;
+			height:280px;
+			position:absolute;
+			left: 50%;
+			top: 50%;
+			margin-left:-200px;
+			margin-top:-140px;
+			border:1px;
+			align:center;
+            background-color: #3a94a5;
+
+
+		}
+		form{
+			width:300px;
+			height:160px;
+			position:relative;
+   			 left:50%;
+  			  top:50%;
+  			  margin-left:-150px;
+  			  margin-top:-80px;
+
+		}
+
+	</STYLE>
+
+
+
+</head>
+<body id="login">
+
+<form action="/index/" method="POST">
+    <h2 style="color: #0f3e68">DREA</h2>
+    <h1 style="color: #0f5d84">用户登录</h1>
+    <input type="text" name="username" />
+    <input type="password" name="password"/>
+    <input type="submit" value="登录"/>
+    <a href="/sign">注册</a>
+</form>
+
+{#<h1 style="...">用户展示</h1>#}
+{#<table border="1">#}
+{#    <thead>#}
+{#        <th>用户名</th>#}
+{#        <th>密码</th>#}
+{#    </thead>#}
+{#    <tbody>#}
+{#        {%  for line in data %}#}
+{#            <tr>#}
+{#                <td>{{ line.user}}</td>#}
+{#                <td>{{ line.pwd }}</td>#}
+{##}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#    </tbody>#}
+{#</table>#}
+
+</body>
+</html>

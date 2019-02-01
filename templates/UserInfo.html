@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+	    <meta charset="utf-8">
+	    <title>实体信息查询</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+
+	    <!-- Bootstrap core CSS -->
+	    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Font Awesome -->
+		<link href="/static/css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- ionicons -->
+		<link href="/static/css/ionicons.min.css" rel="stylesheet">
+		
+		<!-- Datepicker -->
+		<link href="/static/css/datepicker.css" rel="stylesheet"/>
+
+		<!-- Owl Carousel -->
+		<link href="/static/css/owl.carousel.min.css" rel="stylesheet">
+		<link href="/static/css/owl.theme.default.min.css" rel="stylesheet">
+
+		<!-- Simplify -->
+		<link href="/static/css/simplify.min.css" rel="stylesheet">
+
+  	</head>
+
+  	<body class="overflow-hidden">
+
+		<div class="wrapper preload">
+			<div class="sidebar-right">
+				<div class="sidebar-inner scrollable-sidebar">
+					<div class="sidebar-header clearfix">
+						<input class="form-control dark-input" placeholder="Search" type="text">
+						<div class="btn-group pull-right">
+							<a href="#" class="sidebar-setting" data-toggle="dropdown"><i class="fa fa-cog fa-lg"></i></a>
+							<ul class="dropdown-menu pull-right flipInV">
+								<li><a href="#"><i class="fa fa-circle text-danger"></i><span class="m-left-xs">Busy</span></a></li>
+								<li><a href="#"><i class="fa fa-circle-o"></i><span class="m-left-xs">Turn Off Chat</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="title-block">
+						Group Chat
+					</div>
+					<div class="content-block">
+						<ul class="sidebar-list">
+							<li>
+								<a href="#">
+									<i class="fa fa-circle-o text-success"></i><span class="m-left-xs">Close Friends</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-circle-o text-success"></i><span class="m-left-xs">Business</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="title-block">
+						Favorites
+					</div>
+					<div class="content-block">
+						<ul class="sidebar-list">
+							<li>
+								<a href="#" class="clearfix">
+									<img src="/static/images/profile/profile2.jpg" class="img-circle" alt="user avatar">
+									<div class="chat-detail m-left-sm">
+										<div class="chat-name">
+											John Doe
+										</div>
+										<div class="chat-message">
+											Where are you?
+										</div>
+									</div>
+									<div class="chat-status">
+										<i class="fa fa-circle-o text-success"></i>
+									</div>
+									<div class="chat-alert">
+										<span class="badge badge-purple bounceIn animation-delay2">2</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<img src="/static/images/profile/profile3.jpg" class="img-circle" alt="user avatar">
+									<div class="chat-detail m-left-sm">
+										<div class="chat-name">
+											Jane Doe
+										</div>
+										<div class="chat-message">
+											Hello
+										</div>
+									</div>
+									<div class="chat-status">
+										<i class="fa fa-circle-o text-success"></i>
+									</div>
+									<div class="chat-alert">
+										<span class="badge badge-info bounceIn animation-delay2">1</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<img src="/static/images/profile/profile4.jpg" class="img-circle" alt="user avatar">
+									<div class="chat-detail m-left-sm">
+										<div class="chat-name">
+											John Doe
+										</div>
+										<div class="chat-message">
+											See you again next week.
+										</div>
+									</div>
+									<div class="chat-status">
+										<i class="fa fa-circle-o text-danger"></i>
+									</div>
+									<div class="chat-alert">
+										<i class="fa fa-check text-success"></i>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<img src="/static/images/profile/profile5.jpg" class="img-circle" alt="user avatar">
+									<div class="chat-detail m-left-sm">
+										<div class="chat-name">
+											John Doe
+										</div>
+										<div class="chat-message">
+											Hello, Are you there?
+										</div>
+									</div>
+									<div class="chat-status">
+										<i class="fa fa-circle-o text-danger"></i>
+									</div>
+									<div class="chat-alert">
+										<i class="fa fa-reply"></i>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="title-block">
+						More friends
+					</div>
+					<div class="content-block">
+						<ul class="sidebar-list">
+							<li>
+								<a href="#" class="clearfix">
+									<img src="/static/images/profile/profile6.jpg" class="img-circle" alt="user avatar">
+									<div class="chat-detail m-left-sm">
+										<div class="chat-name">
+											John Doe
+										</div>
+										<div class="chat-message">
+											Where are you?
+										</div>
+									</div>
+									<div class="chat-status">
+										<i class="fa fa-circle-o text-success"></i>
+									</div>
+									<div class="chat-alert">
+										<span class="badge badge-success bounceIn animation-delay2">2</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<img src="/static/images/profile/profile7.jpg" class="img-circle" alt="user avatar">
+									<div class="chat-detail m-left-sm">
+										<div class="chat-name">
+											Jane Doe
+										</div>
+										<div class="chat-message">
+											Hello
+										</div>
+									</div>
+									<div class="chat-status">
+										<i class="fa fa-circle-o text-success"></i>
+									</div>
+									<div class="chat-alert">
+										<span class="badge badge-danger bounceIn animation-delay2">1</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<img src="/static/images/profile/profile8.jpg" class="img-circle" alt="user avatar">
+									<div class="chat-detail m-left-sm">
+										<div class="chat-name">
+											John Doe
+										</div>
+										<div class="chat-message">
+											See you again next week.
+										</div>
+									</div>
+									<div class="chat-status">
+										<i class="fa fa-circle-o text-danger"></i>
+									</div>
+									<div class="chat-alert">
+										<i class="fa fa-check text-success"></i>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<img src="/static/images/profile/profile9.jpg" class="img-circle" alt="user avatar">
+									<div class="chat-detail m-left-sm">
+										<div class="chat-name">
+											John Doe
+										</div>
+										<div class="chat-message">
+											Hello, Are you there?
+										</div>
+									</div>
+									<div class="chat-status">
+										<i class="fa fa-circle-o text-danger"></i>
+									</div>
+									<div class="chat-alert">
+										<i class="fa fa-reply"></i>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div><!-- sidebar-inner -->
+			</div><!-- sidebar-right -->
+			<header class="top-nav">
+				<div class="top-nav-inner">
+					<div class="nav-header">
+						<button type="button" class="navbar-toggle pull-left sidebar-toggle" id="sidebarToggleSM">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<ul class="nav-notification pull-right">
+							<li>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog fa-lg"></i></a>
+								<span class="badge badge-danger bounceIn">1</span>
+								<ul class="dropdown-menu dropdown-sm pull-right">
+									<li class="user-avatar">
+										<img src="/static/images/profile/profile1.jpg" alt="" class="img-circle">
+										<div class="user-content">
+											<h5 class="no-m-bottom">admin</h5>
+											<div class="m-top-xs">
+												<a href="profile.html" class="m-right-sm">Profile</a>
+												<a href="signin.html">Log out</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="/index">
+											Inbox
+											<span class="badge badge-danger bounceIn animation-delay2 pull-right">1</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Notification
+											<span class="badge badge-purple bounceIn animation-delay3 pull-right">2</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="sidebarRight-toggle">
+											Message
+											<span class="badge badge-success bounceIn animation-delay4 pull-right">7</span>
+										</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="#">Setting</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+						<a href="index.html" class="brand">
+							<i class="fa fa-database"></i><span class="brand-name">DREA</span>
+						</a>
+					</div>
+					<div class="nav-container">
+						<button type="button" class="navbar-toggle pull-left sidebar-toggle" id="sidebarToggleLG">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<ul class="nav-notification">
+							<li class="search-list">
+								<div class="search-input-wrapper">
+									<div class="search-input">
+										<input type="text" class="form-control input-sm inline-block">
+										<a href="#" class="input-icon text-normal"><i class="ion-ios7-search-strong"></i></a>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="pull-right m-right-sm">
+							<div class="user-block hidden-xs">
+								<a href="#" id="userToggle" data-toggle="dropdown">
+									<img src="/static/images/gallery/gallery6.jpg" alt="" class="img-circle inline-block user-profile-pic">
+									<div class="user-detail inline-block">
+										admin
+										<i class="fa fa-angle-down"></i>
+									</div>
+								</a>
+								<div class="panel border dropdown-menu user-panel">
+									<div class="panel-body paddingTB-sm">
+										<ul>
+											<li>
+												<a href="profile.html">
+													<i class="fa fa-edit fa-lg"></i><span class="m-left-xs">My Profile</span>
+												</a>
+											</li>
+											<li>
+												<a href="/index">
+													<i class="fa fa-inbox fa-lg"></i><span class="m-left-xs">Inboxes</span>
+													<span class="badge badge-danger bounceIn animation-delay3">2</span>
+												</a>
+											</li>
+											<li>
+												<a href="/signin">
+													<i class="fa fa-power-off fa-lg"></i><span class="m-left-xs">Sign out</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div><!-- ./top-nav-inner -->
+			</header>
+			<aside class="sidebar-menu fixed">
+				<div class="sidebar-inner scrollable-sidebar">
+					<div class="main-menu">
+						<ul id="liChange" class="accordion">
+							<li class="menu-header">
+								Main Menu
+							</li>
+							<li class="bg-palette1">
+								<a href="/index">
+									<span class="menu-content block">
+										<span class="menu-icon"><i class="block fa fa-home fa-lg"></i></span>
+										<span class="text m-left-sm">Home</span>
+									</span>
+									<span class="menu-content-hover block">
+										Home
+									</span>
+								</a>
+							</li>
+
+							<li class="openable bg-palette3 active">
+								<a href="#">
+									<span class="menu-content block">
+										<span class="menu-icon"><i class="block fa fa-list fa-lg"></i></span>
+										<span class="text m-left-sm">信任域及实体信息</span>
+										<span class="submenu-icon"></span>
+									</span>
+									<span class="menu-content-hover block">
+										Form
+									</span>
+								</a>
+                                 <ul class="submenu">
+								    <li><a href="/Prov"><span class="submenu-label">信任域信息</span></a></li>
+									<li><a href="/UserInfo"><span class="submenu-label">域间实体信息</span></a></li>
+								</ul>
+							</li>
+							<li class="bg-palette4">
+								<a href="/TrustE">
+									<span class="menu-content block">
+										<span class="menu-icon"><i class="block fa fa-tags fa-lg"></i></span>
+										<span class="text m-left-sm">域间实体信任评估</span>
+										<span class="submenu-icon"></span>
+									</span>
+									<span class="menu-content-hover block">
+										UI Kits
+									</span>
+								</a>
+
+							</li>
+
+							<li class="bg-palette2">
+								<a href="/His">
+									<span class="menu-content block">
+										<span class="menu-icon"><i class="block fa fa-clock-o fa-lg"></i></span>
+										<span class="text m-left-sm">域间实体交互历史</span>
+										<span class="submenu-icon"></span>
+									</span>
+									<span class="menu-content-hover block">
+										Timeline
+									</span>
+								</a>
+							</li>
+							<li class="menu-header">
+								Others
+							</li>
+							<li class="bg-palette3">
+								<a href="/Relia">
+									<span class="menu-content block">
+										<span class="menu-icon"><i class="block fa fa-gift fa-lg"></i></span>
+										<span class="text m-left-sm">信任评估动态推荐</span>
+										<span class="submenu-icon"></span>
+									</span>
+									<span class="menu-content-hover block">
+										Pages
+									</span>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+					<div class="sidebar-fix-bottom clearfix">
+						<div class="user-dropdown dropup pull-left">
+							<a href="#" class="dropdwon-toggle font-18" data-toggle="dropdown"><i class="ion-person-add"></i>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="/index">
+										Inbox
+										<span class="badge badge-danger bounceIn animation-delay2 pull-right">1</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Notification
+										<span class="badge badge-purple bounceIn animation-delay3 pull-right">2</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="sidebarRight-toggle">
+										Message
+										<span class="badge badge-success bounceIn animation-delay4 pull-right">7</span>
+									</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#">Setting</a>
+								</li>
+							</ul>
+						</div>
+						<a href="lockscreen.html" class="pull-right font-18"><i class="ion-log-out"></i></a>
+					</div>
+				</div><!-- sidebar-inner -->
+			</aside>
+
+			<div class="main-container">
+				<div class="padding-md">
+					<h3 class="header-text m-bottom-md">
+						Node Information
+					</h3>
+
+					<div class="row user-profile-wrapper">
+						<div class="col-md-3 user-profile-sidebar m-bottom-md">
+{#							<div class="row">#}
+{#								<div class="col-sm-4 col-md-12">#}
+{#									<div class="user-profile-pic">#}
+{#										<img src="/static/images/gallery/gallery6.jpg" alt=""><!-- 替换图片-->#}
+{#										<!--<div class="ribbon-wrapper">-->#}
+{#											<!--<div class="ribbon-inner shadow-pulse bg-success">-->#}
+{#												<!--Elite-->#}
+{#											<!--</div>-->#}
+{#										</div>#}
+{#									</div>#}
+{#								</div>#}
+								<div class="col-sm-6 col-md-12">
+{#									<div class="user-name m-top-sm">Node1<i class="fa fa-circle text-success m-left-xs font-14"></i></div>#}
+
+{#									<div class="m-top-sm">#}
+{#										<div>#}
+{#											<i class="fa fa-map-marker user-profile-icon"></i>#}
+{#											信任域Da#}
+{#										</div>#}
+{##}
+{#										<div class="m-top-xs">#}
+{#											<i class="fa fa-briefcase user-profile-icon"></i>#}
+{#											实体Ea#}
+{#										</div>#}
+{##}
+{#									</div>#}
+
+{#									<div class="m-top-sm text-centers">#}
+{#										<a class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>#}
+{#									</div>#}
+
+{#									<h4 class="m-top-md m-bottom-sm">About</h4>#}
+									<p class="m-top-sm">
+										物联网环境下域间实体
+									<p>
+
+								</div>
+							</div><!-- ./row -->
+						</div><!-- ./col -->
+						<div class="col-md-9">
+							<div class="smart-widget">
+								<div class="smart-widget-inner">
+									<ul class="nav nav-tabs tab-style2 tab-right bg-grey">
+								  		<li>
+								  			<a href="#profileTab2" data-toggle="tab">
+								  				<span class="icon-wrapper"><i class="fa fa-book"></i></span>
+
+												<span class="text-wrapper">Account</span>
+								  			</a>
+								  		</li>
+								  		<li class="active">
+								  			<a href="#profileTab1" data-toggle="tab">
+								  				<span class="icon-wrapper"><i class="fa fa-trophy"></i></span>
+								  				<span class="text-wrapper">Overview</span>
+								  			</a>
+								  		</li>
+									</ul>
+									<div class="smart-widget-body">
+										<div class="tab-content">
+											<div class="tab-pane fade" id="profileTab2">
+												<h4 class="header-text m-bottom-md">
+													与其他实体交互次数Top3的实体
+
+												</h4>
+												<div class="row">
+													<div class="col-sm-3 col-sm-6s">
+														<div class="m-bottom-md">
+															<div class="text-center">信任域Db内实体Eb</div>
+															<div class="chart profile-skill chart-skill-red center-block" data-percent="43">43次</div>
+														</div>
+													</div>
+													<div class="col-sm-3 col-sm-6s">
+														<div class="m-bottom-md">
+															<div class="text-center">信任域Df内实体Ea</div>
+															<div class="chart profile-skill chart-skill-blue center-block" data-percent="35">35次</div>
+														</div>
+													</div>
+													<div class="col-sm-3 col-sms-6">
+														<div class="m-bottom-md">
+															<div class="text-center">信任域Dg内实体Er</div>
+															<div class="chart profile-skill chart-skill-green center-block" data-percent="29">29次</div>
+														</div>
+													</div>
+
+												</div><!-- ./row -->
+
+												<div class="row">
+													<div class="col-lg-12">
+														<h4 class="m-top-md">最近一次交互活动</h4>
+
+														<div class="recent-activity-list">
+															<ul>
+																<li>
+																	<div class="activity-detail">
+																		<span class="font-semi-bold">与信任域Df内实体Ea历史交互失败率</span>
+																		<small class="text-muted block">0.08%</small>
+																	</div>
+																</li>
+																<li>
+																	<div class="activity-detail">
+																		<span class="font-semi-bold">与信任域Df内实体Ea历史交互的评价值</span>
+																		<small class="text-muted block">0.73</small>
+																	</div>
+																</li>
+																<li>
+																	<div class="activity-detail">
+																		<span class="font-semi-bold">与信任域Df内实体Ea历史交互响应时间</span>
+																		<small class="text-muted block">2203 ms</small>
+																	</div>
+																</li>
+															</ul>
+														</div><!-- ./.recent-activity-list -->
+													</div><!-- ./col -->
+
+												</div><!-- ./row -->
+											</div><!-- ./tab-pane -->
+											<div class="tab-pane fade in active" id="profileTab1">
+												<h4 class="header-text m-top-md">实体信息查询</h4>
+
+{#                                                <table border="1">#}
+{#                                                <thead>#}
+{#                                                    <th>信任域名</th>#}
+{#                                                    <th>实体名</th>#}
+{#                                                    <th>上下文服务环境类型</th>#}
+{#                                                    <th>实体活跃度</th>#}
+{#                                                </thead>#}
+{#                                                <tbody>#}
+{#                                                    {%  for line in data %}#}
+{#                                                        <tr>#}
+{#                                                            <td>{{ line.did}}</td>#}
+{#                                                            <td>{{ line.ename }}</td>#}
+{#                                                            <td>{{ line.context }}</td>#}
+{#                                                            <td>{{ line.liveness }}</td>#}
+{#                                                        </tr>#}
+{#                                                    {% endfor %}#}
+{#                                                </tbody>#}
+{#                                            </table>#}
+												<form class="form-horizontal m-top-md" action="/UserInfo/" method="post">
+
+													<div class="form-group">
+														<label class="col-sm-3 control-label">信任域名</label>
+														<div class="col-sm-9">
+{#															<input type="text" class="form-control" value=" {%  for line in data %} {{ line.dname }} {% endfor %}">#}
+                                                            <select name="dropdown1">
+                                                            {% for list in data %}
+                                                            <option id="name" value="{{list.dname}}"
+                                                            {% if list.dname == d %}
+                                                                    selected
+                                                            {% endif %}>{{list.dname}}</option>
+                                                            {% endfor %}
+                                                        </select>
+														</div>
+													</div>
+
+													<div class="form-group">
+													    <label class="col-sm-3 control-label">实体名</label>
+													    <div class="col-sm-9">
+{#													      	<input type="text" class="form-control" value="Ea">#}
+                                                            <select name="dropdown2">
+                                                            {% for list1 in ent %}
+                                                            <option id="ename" value="{{list1.ename}}"
+                                                            {% if list1.ename == e %}
+                                                                    selected
+                                                            {% endif %}>{{list1.ename}}</option>
+                                                            {% endfor %}
+                                                            </select>
+													    </div>
+													</div>
+													
+													<!--<div class="form-group">-->
+													    <!--<label class="col-sm-3 control-label">性别</label>-->
+													    <!--<div class="col-sm-9">-->
+													      	<!--<div class="radio inline-block">-->
+																<!--<div class="custom-radio m-right-xs">-->
+																	<!--<input type="radio" id="inlineRadio1" name="profileGender">-->
+																	<!--<label for="inlineRadio1"></label>-->
+																<!--</div>-->
+																<!--<div class="inline-block vertical-top">男</div>-->
+															<!--</div>-->
+															<!--<div class="radio inline-block m-left-sm">-->
+																<!--<div class="custom-radio m-right-xs">-->
+																	<!--<input type="radio" id="inlineRadio2" name="profileGender">-->
+																	<!--<label for="inlineRadio2"></label>-->
+																<!--</div>-->
+																<!--<div class="inline-block vertical-top">女</div>-->
+															<!--</div>-->
+													    <!--</div>-->
+													<!--</div>-->
+
+													<div class="form-group">
+													    <label class="col-sm-3 control-label">实体资源容量/个</label>
+													    <div class="col-sm-9">
+													      	<!--<textarea rows="4" class="form-control" ></textarea>-->
+{#															<input type="text" class="form-control" value="26">#}
+                                                            <label>
+                                                               {% for list1 in eid %}
+                                                                    {{list1.count}}
+                                                               {% endfor %}
+                                                            </label>
+													    </div>
+													</div>
+
+													<div class="form-group">
+													    <label class="col-sm-3 control-label">实体服务能力</label>
+													    <div class="col-sm-9">
+													      	<!--<input type="text" class="form-control" value="">-->
+															<!--<input type="text" class="form-control" value="18">-->
+                                                            <label>
+                                                               {% for list1 in eid %}
+                                                                    {{list1.quality}}
+                                                               {% endfor %}
+
+                                                            </label>
+													    </div>
+													</div>
+
+													<!--<h4 class="header-text m-top-lg">实体能量</h4>-->
+
+													<div class="form-group">
+													    <label class="col-sm-3 control-label">实体能量（CPU资源占用率）</label>
+													    <div class="col-sm-9">
+													      	<!--<input type="text" class="form-control" value="32%">-->
+                                                            <label>
+                                                               {% for list1 in eid %}
+                                                                    {{list1.energy}}
+                                                               {% endfor %}
+
+                                                            </label>
+													    </div>
+													</div>
+
+													<div class="form-group">
+														<label class="col-sm-3 control-label">实体活跃度</label>
+													    <div class="col-sm-9">
+													    	<!--<div class="m-top-xs">-->
+														      	<!--<div class="custom-checkbox">-->
+																	<!--<input type="checkbox" id="securityChk1">-->
+																	<!--<label for="securityChk1"></label>-->
+																<!--</div>-->
+																<!--Yes-->
+																<!--<div class="custom-checkbox m-left-sm">-->
+																	<!--<input type="checkbox" id="securityChk2">-->
+																	<!--<label for="securityChk2"></label>-->
+																<!--</div>-->
+																<!--No-->
+															<!--</div>-->
+															<!--<input type="text" class="form-control" value="0.63">-->
+                                                            <label>
+                                                               {% for list1 in eid %}
+                                                                    {{list1.liveness}}
+                                                               {% endfor %}
+
+                                                            </label>
+
+													    </div>
+													</div>
+
+													<div class="form-group m-top-lg">
+													    <label class="col-sm-3 control-label"></label>
+													    <div class="col-sm-9">
+													      	<input type="submit" class="btn btn-info m-left-xs" value="查询"/>
+
+													    </div>
+													</div>								
+												</form>
+											</div><!-- ./tab-pane -->
+											
+										</div><!-- ./tab-content -->
+									</div><!-- ./smart-widget-body -->
+								</div><!-- ./smart-widget-inner -->
+							</div><!-- ./smart-widget -->
+						</div>
+					</div>
+				</div><!-- ./padding-md -->
+			</div><!-- /main-container -->
+		</div><!-- /wrapper -->
+
+		<a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
+
+	    <!-- Le javascript
+	    ================================================== -->
+	    <!-- Placed at the end of the document so the pages load faster -->
+		
+		<!-- Jquery -->
+		<script src="/static/js/jquery-1.11.1.min.js"></script>
+		
+		<!-- Bootstrap -->
+	    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll -->
+		<script src='/static/js/jquery.slimscroll.min.js'></script>
+		
+		<!-- Popup Overlay -->
+		<script src='/static/js/jquery.popupoverlay.min.js'></script>
+
+		<!-- Easy Pie Chart -->
+		<script src='/static/js/jquery.easypiechart.min.js'></script>
+
+		<!-- Owl Carousel -->
+		<script src='/static/js/owl.carousel.min.js'></script>
+
+		<!-- Datepicker -->
+		<script src='/static/js/uncompressed/datepicker.js'></script>
+
+		<!-- Modernizr -->
+		<script src='/static/js/modernizr.min.js'></script>
+		
+		<!-- Simplify -->
+		<script src="/static/js/simplify/simplify.js"></script>
+
+		<script>
+			$(function()	{
+				$('.chart-skill-red').easyPieChart({
+			        barColor: '#fc8675',
+			        lineWidth: '5'
+			    });
+
+			    $('.chart-skill-blue').easyPieChart({
+			        barColor: '#65C3DF',
+			        lineWidth: '5'
+			    });
+
+			    $('.chart-skill-green').easyPieChart({
+			        barColor: '#1dc499',
+			        lineWidth: '5'
+			    });
+
+			    $('.chart-skill-purple').easyPieChart({
+			        barColor: '#a48ad4',
+			        lineWidth: '5'
+			    });
+				$('#liChange li').click(function (){
+                     //把之前已有的active去掉
+					console.log("dd");
+                     $('.active').removeClass('active');
+                     //当前点击的li加上class
+                     $(this).addClass("active");
+                });
+				
+			});
+
+		</script>
+
+  	</body>
+</html>

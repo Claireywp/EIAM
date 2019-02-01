@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shujuku_test</title>
+</head>
+<body>
+
+<form action="/sjk/" method="POST">
+
+    <div class="form-group">
+        <label class="col-sm-3 control-label">域名</label>
+        <div class="col-sm-9">
+            <select name="dropdown1">
+            {% for list1 in data %}
+            <option id="dname" value="{{list1.dname}}"
+            {% if list1.dname == d %}
+                        selected
+                {% endif %}>{{list1.dname}}</option>
+            {% endfor %}
+            </select>
+        </div>
+     <label class="col-sm-3 control-label">实体名</label>
+        <div class="col-sm-9">
+            <select name="dropdown2">
+            {% for list1 in ent %}
+                <option id="ename" value="{{list1.ename}}"
+                {% if list1.ename == e %}
+                        selected
+                {% endif %}>
+                    {{list1.ename}}</option>
+            {% endfor %}
+            </select>
+        </div>
+     <input type="submit" value="查询"/>
+    <label>
+
+       {% for list1 in eid %}
+            {{list1.eid}}
+           {{list1.count}}
+           {{list1.energy}}
+       {% endfor %}
+
+    </label>
+
+
+    <label>
+        {% for list1 in resid %}
+            {{list1.resid}}
+       {% endfor %}
+    </label>
+
+    <label>
+        {% for list1 in reqid %}
+            {{list1.reqid}}
+       {% endfor %}
+    </label>
+
+    <table border="1">
+    <thead>
+        <th>请求实体Id</th>
+        <th>响应实体Id</th>
+        <th>交互请求响应时间/ms</th>
+        <th>交互状态</th>
+        <th>交互评价值</th>
+        <th>交互请求时间</th>
+        <th>域间实体信任度</th>
+    </thead>
+    <tbody>
+        {%  for line in reqid %}
+            <tr>
+                <td>{{ line.resid}}</td>
+                <td>{{ line.reqid }}</td>
+            <td>{{ line.restime }}</td>
+            <td>
+                {% if line.state == 0 %}
+                    失败
+                {% endif %}
+                {% if line.state == 1 %}
+                    成功
+                {% endif %}
+            </td>
+            <td>{{ line.estimate }}</td>
+            <td>{{ line.date }} {{ line.time }}</td>
+            <td>{{ line.tv_e }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+    </div>
+</form>
+
+
+
+</body>
+</html>
