@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'^Relia/', views.Relia),
     url(r'^His/', views.His),
     url(r'^sjk/', views.sjk),
-    url(r'^sign/', views.sign)
+    url(r'^sign/', views.sign),
+    url(r'^logout/', views.logout)
 ]

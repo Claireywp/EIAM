@@ -26,6 +26,9 @@
 		<!-- Simplify -->
 		<link href="/static/css/simplify.min.css" rel="stylesheet">
 
+        <script type="text/javascript">
+        console.log("{{ user }}");
+        </script>
   	</head>
 
   	<body class="overflow-hidden">
@@ -245,10 +248,10 @@
 									<li class="user-avatar">
 										<img src="/static/images/profile/profile1.jpg" alt="" class="img-circle">
 										<div class="user-content">
-											<h5 class="no-m-bottom">admin</h5>
+											<h5 class="no-m-bottom">{{ user }}</h5>
 											<div class="m-top-xs">
 												<a href="profile.html" class="m-right-sm">Profile</a>
-												<a href="signin.html">Log out</a>
+												<a href="/logout">Log out</a>
 											</div>
 										</div>
 									</li>
@@ -278,7 +281,7 @@
 							</li>
 						</ul>
 
-						<a href="index.html" class="brand">
+						<a href="/UserInfo" class="brand">
 							<i class="fa fa-database"></i><span class="brand-name">CDEM</span>
 						</a>
 					</div>
@@ -303,7 +306,7 @@
 								<a href="#" id="userToggle" data-toggle="dropdown">
 									<img src="/static/images/gallery/gallery6.jpg" alt="" class="img-circle inline-block user-profile-pic">
 									<div class="user-detail inline-block">
-										admin
+										{{ user }}
 										<i class="fa fa-angle-down"></i>
 									</div>
 								</a>
@@ -443,7 +446,7 @@
 								</li>
 							</ul>
 						</div>
-						<a href="lockscreen.html" class="pull-right font-18"><i class="ion-log-out"></i></a>
+						<a href="/logout" class="pull-right font-18"><i class="ion-log-out"></i></a>
 					</div>
 				</div><!-- sidebar-inner -->
 			</aside>
@@ -624,26 +627,6 @@
                                                             </select>
 													    </div>
 													</div>
-													
-													<!--<div class="form-group">-->
-													    <!--<label class="col-sm-3 control-label">性别</label>-->
-													    <!--<div class="col-sm-9">-->
-													      	<!--<div class="radio inline-block">-->
-																<!--<div class="custom-radio m-right-xs">-->
-																	<!--<input type="radio" id="inlineRadio1" name="profileGender">-->
-																	<!--<label for="inlineRadio1"></label>-->
-																<!--</div>-->
-																<!--<div class="inline-block vertical-top">男</div>-->
-															<!--</div>-->
-															<!--<div class="radio inline-block m-left-sm">-->
-																<!--<div class="custom-radio m-right-xs">-->
-																	<!--<input type="radio" id="inlineRadio2" name="profileGender">-->
-																	<!--<label for="inlineRadio2"></label>-->
-																<!--</div>-->
-																<!--<div class="inline-block vertical-top">女</div>-->
-															<!--</div>-->
-													    <!--</div>-->
-													<!--</div>-->
 
 													<div class="form-group">
 													    <label class="col-sm-3 control-label">实体资源容量/个</label>

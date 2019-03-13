@@ -1,27 +1,42 @@
 from django.shortcuts import render
 
 from eiam_db import models
+from django.shortcuts import redirect
 
 from django.http import HttpResponse
 
 # Create your views here.
 
 def index(request):
+    # if len(request.session["username"]):
+    #     return redirect("/UserInfo")
     if request.method =="POST":
         username = request.POST.get("username", None)
         password = request.POST.get("password", None)
         # models.CmdbUserinfo.objects.create(user=username, pwd=password)
-        user_list = models.CmdbUserinfo.objects.filter(user=username, pwd=password).count()
-        if user_list > 0:
-            user_list = models.DomainMessage.objects.all()
+        user_list = models.CmdbUserinfo.objects.filter(user=username, pwd=password)
+        if user_list.count() > 0:
+            data_list = models.DomainMessage.objects.all()
             ent_list = models.EntityMessage.objects.all()
-            return render(request, "UserInfo.html",  {"data": user_list, "ent": ent_list})
+            request.session["username"] = username
+            request.session["password"] = password
+            request.session.set_expiry(10)
+            return redirect("/UserInfo")
+            # return render(request, "UserInfo.html",  {"user": user_list, "data": data_list, "ent": ent_list})
+        elif len(username) > 0:
+            return render(request, "index.html", {"error": "error"})
+    # user_list = models.CmdbUserinfo.objects.all()
 
-    user_list = models.CmdbUserinfo.objects.all()
+    return render(request, "index.html")
 
-    return render(request, "index.html", {"data": user_list})
+
 
 def UserInfo(request):
+    username = ""
+    password = ""
+    if request.session.get("username", None):
+        username = request.session["username"]
+        password = request.session["password"]
     user_list = models.DomainMessage.objects.all()
     ent_list = models.EntityMessage.objects.all()
     e = "Ea"
@@ -33,12 +48,22 @@ def UserInfo(request):
         d = request.POST.get("dropdown1")
         did = models.DomainMessage.objects.filter(dname=d)
         eid = models.EntityMessage.objects.filter(did=did, ename=e)
-    return render(request, "UserInfo.html", {"data": user_list, "ent": ent_list, "eid": eid, "e": e, "d": d})
+    else:
+        did = models.DomainMessage.objects.filter(dname=d)
+        eid = models.EntityMessage.objects.filter(did=did, ename=e)
+    return render(request, "UserInfo.html", {"user": username, "data": user_list, "ent": ent_list, "eid": eid, "e": e, "d": d})
 
 def TrustE(request):
-    user_list = models.DomainMessage.objects.all()
-    ent_list = models.EntityMessage.objects.all()
-    return render(request, "TrustEvaluation.html", {"data": user_list, "ent": ent_list})
+    e_list = models.Trends.objects.all()
+    esend = 2
+    eres = 22
+    data = models.Trends.objects.filter(resid_t=esend, reqid_t=eres)
+    if request.method == "POST":
+        eres = request.POST.get("dropdown2")
+        esend = request.POST.get("dropdown1")
+        data = models.Trends.objects.filter(resid_t=esend)
+
+    return render(request, "TrustEvaluation.html", {"data": data, "ent": e_list, "e1": esend, "e2": eres})
 
 def Prov(request):
     user_list = models.DomainMessage.objects.all()
@@ -102,6 +127,8 @@ def sign(request):
 
     return render(request, "signin.html")
 
-
+def logout(requset):
+    requset.session.clear()
+    return redirect("/index")
 
 

@@ -187,7 +187,15 @@ class Trends(models.Model):
     resid_t = models.IntegerField(db_column='ResId_t')  # Field name made lowercase.
     reqid_t = models.IntegerField(db_column='ReqId_t')  # Field name made lowercase.
     estimate = models.FloatField(db_column='Estimate')  # Field name made lowercase.
-    trend = models.TextField()
+    t1 = models.FloatField(db_column='t1')  # Field name made lowercase.
+    t2 = models.FloatField(db_column='t2')  # Field name made lowercase.
+    t3 = models.FloatField(db_column='t3')  # Field name made lowercase.
+    t4 = models.FloatField(db_column='t4')  # Field name made lowercase.
+    t5 = models.FloatField(db_column='t5')  # Field name made lowercase.
+    t6 = models.FloatField(db_column='t6')  # Field name made lowercase.
+    t7 = models.FloatField(db_column='t7')  # Field name made lowercase.
+    t8 = models.FloatField(db_column='t8')  # Field name made lowercase.
+    # trend = models.TextField()
 
     class Meta:
         managed = False

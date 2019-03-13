@@ -439,7 +439,7 @@
 					</div>
 				</div><!-- sidebar-inner -->
 			</aside>
-			
+			<form class="form-horizontal m-top-md" action="/TrustE/" method="post">
 			<div class="main-container">
 				<div class="padding-md">
 					<ul class="breadcrumb">
@@ -456,36 +456,47 @@
 					   <label for="name" style="font-size：20px：：" >选择管理域及实体</label>
 					   <div>
                         <label for="name" style="font-size：20px：：" >请求实体</label>
-					      <select name="dropdown">
-                            {% for list in data %}
-                            <option id="name" value="{{list.dname}}">{{list.dname}}</option>
-                            {% endfor %}
-                        </select>
-						<select name="dropdown">
+{#					      <select name="dropdown">#}
+{#                            {% for list in data %}#}
+{#                            <option id="name" value="{{list.dname}}">{{list.dname}}</option>#}
+{#                            {% endfor %}#}
+{#                        </select>#}
+						<select name="dropdown1">
                             {% for list1 in ent %}
-                            <option id="ename" value="{{list1.ename}}">{{list1.ename}}</option>
+                            <option id="ename" value="{{list1.resid_t}}"
+                            {% if list1.resid_t == e1 %}
+                                    selected
+                            {% endif %}
+                            >{{list1.resid_t}}</option>
                             {% endfor %}
                         </select>
-                       <label for="name" style="font-size：20px：：" >响应实体</label>
-					      <select name="dropdown">
-                            {% for list in data %}
-                            <option id="name" value="{{list.dname}}">{{list.dname}}</option>
-                            {% endfor %}
-                        </select>
-						<select name="dropdown">
-                            {% for list1 in ent %}
-                            <option id="ename" value="{{list1.ename}}">{{list1.ename}}</option>
-                            {% endfor %}
-                        </select>
+{#                       <label for="name" style="font-size：20px：：" >响应实体</label>#}
+{#					      <select name="dropdown">#}
+{#                            {% for list in data %}#}
+{#                            <option id="name" value="{{list.dname}}">{{list.dname}}</option>#}
+{#                            {% endfor %}#}
+{#                        </select>#}
+{#						<select name="dropdown2">#}
+{#                            {% for list1 in ent %}#}
+{#                            <option id="ename" value="{{list1.reqid_t}}"#}
+{#                            {% if list1.reqid_t == e2 %}#}
+{#                                    selected#}
+{#                            {% endif %}#}
+{#                            >{{list1.reqid_t}}</option>#}
+{#                            {% endfor %}#}
+{#                        </select>#}
+                        <input type="submit"  value="查询"/>
 					   </div>
 
 					</div>
+
 
 					<div class="smart-widget widget-green">
 						<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
 					</div><!-- ./smart-widget -->
 				</div><!-- ./padding-md -->
 			</div><!-- /main-container -->
+            </form>
 
 		</div><!-- /wrapper -->
 
@@ -561,14 +572,14 @@ var oAjax = new XMLHttpRequest();
 }
 
 	var txt='{"result":['+
-                    '{"id":8,"uid":"1457072937124renter1","trustorUid":"renter1","trusteeUid":"component2","trustValue":0.5860,"actionTime":"2018/9/15-8:05","actionType":2},'+
-                    '{"id":11,"uid":"1457072937165renter1","trustorUid":"renter1","trusteeUid":"component5","trustValue":0.6850,"actionTime":"2018/9/15-8:39","actionType":2},'+
-					'{"id":20,"uid":"1457072937284renter1","trustorUid":"renter1","trusteeUid":"component4","trustValue":0.7120,"actionTime":"2018/9/15-11:32","actionType":2},'+
-                    '{"id":23,"uid":"1457072937323renter1","trustorUid":"renter1","trusteeUid":"component6","trustValue":0.8050,"actionTime":"2018/9/15-16:05","actionType":2},'+
-                    '{"id":29,"uid":"1457072937399renter1","trustorUid":"renter1","trusteeUid":"component6","trustValue":0.7460,"actionTime":"2018/9/16-8:05","actionType":2},'+
-                    '{"id":30,"uid":"1457072937411renter1","trustorUid":"renter1","trusteeUid":"component3","trustValue":0.8880,"actionTime":"2018/9/16-12:46","actionType":2},'+
-                    '{"id":32,"uid":"1457072937438renter1","trustorUid":"renter1","trusteeUid":"component4","trustValue":0.9140,"actionTime":"2018/9/16-18:32","actionType":2},'+
-                    '{"id":34,"uid":"1457072937465renter1","trustorUid":"renter1","trusteeUid":"component3","trustValue":0.8750,"actionTime":"2018/9/16-20:16","actionType":2}]}';
+                    '{"id":8,"uid":"1457072937124renter1","trustorUid":"renter1","trusteeUid":"component2","trustValue":{% for list1 in data %}{{list1.t1}}{% endfor %},"actionTime":"2018/9/15-8:05","actionType":2},'+
+                    '{"id":11,"uid":"1457072937165renter1","trustorUid":"renter1","trusteeUid":"component5","trustValue":{% for list1 in data %}{{list1.t2}}{% endfor %},"actionTime":"2018/9/15-8:39","actionType":2},'+
+					'{"id":20,"uid":"1457072937284renter1","trustorUid":"renter1","trusteeUid":"component4","trustValue":{% for list1 in data %}{{list1.t3}}{% endfor %},"actionTime":"2018/9/15-11:32","actionType":2},'+
+                    '{"id":23,"uid":"1457072937323renter1","trustorUid":"renter1","trusteeUid":"component6","trustValue":{% for list1 in data %}{{list1.t4}}{% endfor %},"actionTime":"2018/9/15-16:05","actionType":2},'+
+                    '{"id":29,"uid":"1457072937399renter1","trustorUid":"renter1","trusteeUid":"component6","trustValue":{% for list1 in data %}{{list1.t5}}{% endfor %},"actionTime":"2018/9/16-8:05","actionType":2},'+
+                    '{"id":30,"uid":"1457072937411renter1","trustorUid":"renter1","trusteeUid":"component3","trustValue":{% for list1 in data %}{{list1.t6}}{% endfor %},"actionTime":"2018/9/16-12:46","actionType":2},'+
+                    '{"id":32,"uid":"1457072937438renter1","trustorUid":"renter1","trusteeUid":"component4","trustValue":{% for list1 in data %}{{list1.t7}}{% endfor %},"actionTime":"2018/9/16-18:32","actionType":2},'+
+                    '{"id":34,"uid":"1457072937465renter1","trustorUid":"renter1","trusteeUid":"component3","trustValue":{% for list1 in data %}{{list1.t8}}{% endfor %},"actionTime":"2018/9/16-20:16","actionType":2}]}';
 
     var obj = eval ("(" + txt + ")");
     var myobj= new Array();
@@ -584,7 +595,7 @@ var oAjax = new XMLHttpRequest();
 
 $(document).ready(function() {
    var title = {
-      text: '域间实体信任度变化趋势'
+      text: '实体Id为{% for list1 in data %}{{list1.resid_t}}{% endfor %}和{% for list1 in data %}{{list1.reqid_t}}{% endfor %}的跨域实体间信任度变化趋势'
    };
    var subtitle = {
       text: ''

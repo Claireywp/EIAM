@@ -45,6 +45,15 @@
     <a href="/sign">注册</a>
 </form>
 
+{% if error %}
+<script>
+{#    {% for msg in error %}#}
+        window.confirm("用户名或密码错误，请确认后登录！");
+{#        alert('{{ msg }}');#}
+{#    {% endfor %}#}
+</script>
+{% endif %}
+
 {#<h1 style="...">用户展示</h1>#}
 {#<table border="1">#}
 {#    <thead>#}
