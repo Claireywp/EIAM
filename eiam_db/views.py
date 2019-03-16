@@ -16,13 +16,10 @@ def index(request):
         # models.CmdbUserinfo.objects.create(user=username, pwd=password)
         user_list = models.CmdbUserinfo.objects.filter(user=username, pwd=password)
         if user_list.count() > 0:
-            data_list = models.DomainMessage.objects.all()
-            ent_list = models.EntityMessage.objects.all()
             request.session["username"] = username
-            request.session["password"] = password
+            request.session["model"] = user_list[0].model
             request.session.set_expiry(10)
             return redirect("/UserInfo")
-            # return render(request, "UserInfo.html",  {"user": user_list, "data": data_list, "ent": ent_list})
         elif len(username) > 0:
             return render(request, "index.html", {"error": "error"})
     # user_list = models.CmdbUserinfo.objects.all()
@@ -33,10 +30,10 @@ def index(request):
 
 def UserInfo(request):
     username = ""
-    password = ""
+    model = ""
     if request.session.get("username", None):
         username = request.session["username"]
-        password = request.session["password"]
+        model = request.session["model"]
     user_list = models.DomainMessage.objects.all()
     ent_list = models.EntityMessage.objects.all()
     e = "Ea"
@@ -70,7 +67,14 @@ def Prov(request):
     return render(request, "ProviderList.html", {"data": user_list})
 
 def Relia(request):
-    return render(request, "Reliability.html",)
+    e_list = models.GValue.objects.values("eid").distinct()
+    eid = 2
+    list = models.GValue.objects.filter(eid=eid)
+    if request.method == "POST":
+        eid = request.POST.get("dropdown1")
+        list = models.GValue.objects.filter(eid=eid)
+
+    return render(request, "Reliability.html", {"e_list": e_list, "data": list, "eid": eid})
 
 def His(request):
     year = "2018"

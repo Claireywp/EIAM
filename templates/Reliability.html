@@ -461,7 +461,26 @@
 							</li>
 						</ul>
 					</div>-->
+                    <form class="form-horizontal m-top-md" action="/Relia/" method="post">
 
+                    <div class="select-date">
+					   <label for="name" style="font-size：20px：：" >选择实体</label>
+					   <div>
+
+						<select name="dropdown1">
+                            {% for list1 in e_list %}
+                            <option id="eid" value="{{list1.eid}}"
+                            {% if list1.eid == eid %}
+                                    selected
+                            {% endif %}
+                            >{{list1.eid}}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit"  value="查询"/>
+					   </div>
+					</div>
+
+            </form>
 					<div class="gallery-list js-masonry m-top-md">
 						<div id="container" style="min-width:400px;height:400px"></div>
 					</div><!-- ./gallery-list -->
@@ -522,30 +541,19 @@
 
 
 		<script>
+            var txt = [{% for d in data %}'{{d.txt}}',{% endfor %}];
+            var data1 = [{% for d in data %}{{d.gvalue}},{% endfor %}];
 			$(function () {
     $('#container').highcharts({
         chart: {
             type: 'column'
         },
         title: {
-            text: '可提供资源交互的跨域实体收益值比较'
+            text: '实体ID为{{ eid }}的跨域实体收益值比较'
         },
-       
+
         xAxis: {
-            categories: [
-                'Da-Ef',
-                'Db-En',
-                'Dc-Ea',
-                'De-Eb',
-                'Df-Eq',
-                'Dg-Ef',
-                'Dh-Eg',
-                'Dk-Ec',
-                'Dl-Eh',
-                'Dm-Et',
-                'Dn-Em',
-                'Dp-Ea'
-            ],
+            categories: txt,
             crosshair: true
         },
         yAxis: {
@@ -569,7 +577,7 @@
         },
         series: [{
             name: '收益值',
-            data: [0.835, 0.921, 0.572, 0.782, 0.821, 0.734, 0.619, 0.917, 0.841, 0.786, 0.855, 0.879]
+            data: data1
         }]
     });
 });

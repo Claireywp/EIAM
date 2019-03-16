@@ -202,6 +202,17 @@ class Trends(models.Model):
         db_table = 'trends'
 
 
+class GValue(models.Model):
+    gid = models.AutoField(primary_key=True)
+    eid = models.ForeignKey(EntityMessage, models.DO_NOTHING, db_column='eid')
+    txt = models.CharField(max_length=50)
+    gvalue = models.FloatField()
+
+    class Meta:
+        managed = False
+        db_table = 'g_value'
+
+
 class TrustD(models.Model):
     tdid = models.AutoField(db_column='TDId', primary_key=True)  # Field name made lowercase.
     senddid = models.IntegerField(db_column='sendDId')  # Field name made lowercase.
