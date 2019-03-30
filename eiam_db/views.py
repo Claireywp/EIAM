@@ -39,14 +39,17 @@ def UserInfo(request):
     e = "Ea"
     d = "Da"
     did = models.DomainMessage.objects.filter(dname=d)
+    did = did[0].did
     eid = models.EntityMessage.objects.filter(did=did, ename=e)
     if request.method == "POST":
         e = request.POST.get("dropdown2")
         d = request.POST.get("dropdown1")
         did = models.DomainMessage.objects.filter(dname=d)
+        did = did[0].did
         eid = models.EntityMessage.objects.filter(did=did, ename=e)
     else:
         did = models.DomainMessage.objects.filter(dname=d)
+        did = did[0].did
         eid = models.EntityMessage.objects.filter(did=did, ename=e)
     return render(request, "UserInfo.html", {"user": username, "data": user_list, "ent": ent_list, "eid": eid, "e": e, "d": d})
 
